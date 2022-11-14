@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     createSquares();
 
+    // This function creates the game board squares
     function createSquares() {
         const gameBoard = document.getElementById("board")
         
