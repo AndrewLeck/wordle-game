@@ -6,13 +6,6 @@ document.addEventListener("DOMContentLoaded", () =>{
     let availableSpace = 1;
     
     const keys = document.querySelectorAll(".keyboard-row button");
-    
-    for (let i = 0; i < keys.length; i++) {
-        keys[i].onclick = ({ target }) => {
-            const letter = target.getAttribute("data-key");
-            updatedGuessedWords(letter)
-        };
-    }
 
     function getCurrentWordArray(){
         const numberOfGuessedWords = guessedWords.length;
@@ -25,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         if (currentWordArray && getCurrentWordArray.length < 5){
             currentWordArray.push(letter)
 
-            const availableSpaceEl= document.getElementById(String(1))
+            const availableSpaceEl= document.getElementById(String(availableSpace))
             availableSpace = availableSpace + 1;
             availableSpaceEl.textContent = letter
         }
@@ -45,5 +38,18 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
     }
 
+
+    for (let i = 0; i < keys.length; i++) {
+        keys[i].onclick = ({ target }) => {
+            const letter = target.getAttribute("data-key");
+
+            if( letter === 'enter') {
+                handleSubmitWord()
+                return;
+            }
+
+            updatedGuessedWords(letter)
+        };
+    }
 
 });
