@@ -2,6 +2,15 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     createSquares();
 
+    const keys = document.querySelectorAll(".keyboard-row button");
+    
+    for (let i = 0; i < keys.length; i++) {
+        keys[i].onclick = ({ target }) => {
+            const key = target.getAttribute("data-key");
+            console.log('The key is', key)
+        };
+        
+    }
     // This function creates the game board squares
     function createSquares() {
         const gameBoard = document.getElementById("board")
@@ -13,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             square.setAttribute("id", i + 1);
             gameBoard.appendChild(square);
         }
-
     }
+
+
 });
