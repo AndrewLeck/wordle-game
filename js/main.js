@@ -26,8 +26,15 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     }
 
+    //This function will make sure that the worred guess is 5 letters
+    //Change the aleart when finished to sweet alert to add your own twist and style to it.
     function handleSubmitWord(){
+        const currentWordArray = getCurrentWordArray();
+        if ( currentWordArray.length !== 5){
+            window.alert("Word must be 5 letters");
+        }
 
+        const 
     }
 
     // This function creates the game board squares
