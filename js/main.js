@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
     let guessedWords = [[]]
     let availableSpace = 1;
+    let word = "dairy" 
     
     const keys = document.querySelectorAll(".keyboard-row button");
 
@@ -22,6 +23,10 @@ document.addEventListener("DOMContentLoaded", () =>{
             availableSpace = availableSpace + 1;
             availableSpaceEl.textContent = letter
         }
+
+    }
+
+    function handleSubmitWord(){
 
     }
 
