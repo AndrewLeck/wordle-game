@@ -40,13 +40,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     currentWordArray.forEach((letter, index) => {
       setTimeout(() => {
-        const tileColor = "rgb( 58, 58, 60)";
+        const tileColor = "rgb(58, 58, 60)";
 
         const letterId = firstLetterId + index;
         const letterEl = document.getElementById(letterId);
         letterEl.classList.add("animate__flipInX");
         letterEl.style = `background-color:${tileColor}; border-color:${tileColor}`;
-      }, interval);
+      }, interval * index);
     });
     guessedWordCount += 1;
 
