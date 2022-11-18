@@ -25,6 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  //This function will provide the proper color for the tile when submitted
+  function getTileColor(letter, index) {
+    const isCorrectLetter = word.includes(letter)
+
+    if(!isCorrectLetter){
+        return "rgb(58, 58, 60)";
+    }
+
+    const letterInThatPosition = word.charAt(index)
+    const isCorrectposition = letter = letterInThatPosition
+
+    if(isCorrectposition){
+        return "rgb(83, 141, 78)";
+    }
+
+    return "rgb(181, 159, 59)";
+  }
+
   //This function will make sure that the worred guess is 5 letters
   //Change the aleart when finished to sweet alert to add your own twist and style to it.
   function handleSubmitWord() {
@@ -40,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     currentWordArray.forEach((letter, index) => {
       setTimeout(() => {
-        const tileColor = "rgb(58, 58, 60)";
+        const tileColor = getTileColor(letter, index);
 
         const letterId = firstLetterId + index;
         const letterEl = document.getElementById(letterId);
